@@ -1,0 +1,491 @@
+/* =========================================================
+   UMSI Engaged Learning Office | Deliverable #2: Mobile view
+   Juan Alonso-Allende (aallende)
+
+   Mobile-first. There are NO width media queries in this file.
+   The only media query is prefers-reduced-motion (accessibility).
+
+   Citations:
+   - Colors: U-M Brand Guidelines, https://brand.umich.edu/
+     Michigan Maize #FFCB05, Michigan Blue #00274C.
+   - Skip link pattern adapted from W3Schools "How TO - Skip to main
+     content": https://www.w3schools.com/howto/howto_css_skip_link.asp
+   - Stylesheet drafted with help from Claude (Anthropic, claude.ai),
+     then reviewed and edited by Juan.
+   ========================================================= */
+
+:root {
+  --maize: #FFCB05;
+  --blue: #00274C;
+  --blue-deep: #001A33;
+  --blue-soft: #e8eef5;
+  --ink: #1d1d1f;
+  --muted: #4a5563;
+  --paper: #ffffff;
+  --page: #f4f6f9;
+  --line: #d5dce5;
+  --radius: 0.75rem;
+  --gutter: clamp(1rem, 4vw, 1.5rem);
+  --shadow: 0 0.1rem 0.4rem rgba(0, 39, 76, 0.08);
+  --sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  color: var(--ink);
+  background: var(--page);
+}
+
+a { color: var(--blue); text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 0.15em; }
+
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--maize);
+}
+
+/* ---------- Skip to main: hidden until focused ---------- */
+.skip-link {
+  position: absolute;
+  top: -10rem;
+  left: var(--gutter);
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--maize);
+  color: var(--blue);
+  font-weight: 700;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.skip-link:focus { top: 0; }
+
+/* ---------- Header: logo + name, then 2x2 nav grid ---------- */
+.site-header {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  grid-template-areas:
+    "logo name"
+    "nav  nav";
+  align-items: center;
+  column-gap: 0.75rem;
+  background: var(--paper);
+  border-bottom: 0.3rem solid var(--maize);
+}
+
+.site-logo {
+  grid-area: logo;
+  width: 100%;
+  margin: 0.75rem 0 0.75rem var(--gutter);
+}
+
+.site-name {
+  grid-area: name;
+  padding-right: var(--gutter);
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: var(--blue);
+}
+
+.site-nav {
+  grid-area: nav;
+  background: var(--blue);
+  padding: 0.75rem var(--gutter);
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.site-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 3rem;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--paper);
+  text-decoration: none;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0.5rem;
+}
+.site-nav a:hover { border-color: var(--maize); text-decoration: underline; }
+
+/* Current page: fill + bold border + underline, so it is not color alone */
+.site-nav a[aria-current="page"] {
+  background: var(--maize);
+  border-color: var(--maize);
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* ---------- Hero (first section of each page) ---------- */
+.hero {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem var(--gutter);
+  background: var(--blue);
+  color: var(--paper);
+}
+
+.hero hgroup { display: grid; gap: 0.5rem; }
+
+.hero hgroup p {
+  justify-self: start;
+  padding: 0.2rem 0.65rem;
+  background: var(--maize);
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 8vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+/* Home page tagline (2nd p after h1) */
+.hero h1 + p {
+  color: var(--maize);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.hero a { color: var(--paper); }
+
+.hero img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* Jump-link buttons in the hero */
+.jump-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+.jump-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.5rem;
+  border: 2px solid var(--paper);
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+.jump-links li:first-child a {
+  background: var(--maize);
+  border-color: var(--maize);
+  color: var(--blue);
+}
+.jump-links a:hover { text-decoration: underline; }
+
+/* ---------- General sections ---------- */
+main > section:not(.hero),
+main > aside {
+  padding: 2rem var(--gutter) 0;
+}
+main > :last-child { padding-bottom: 2.5rem; }
+
+main h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--blue);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 0.25rem solid var(--maize);
+}
+
+main h3 {
+  font-size: 1.15rem;
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+}
+
+main p + p { margin-top: 0.85rem; }
+main section > p + ul,
+main section > ul + p { margin-top: 1rem; }
+
+/* Phase / track sections become white panels */
+.phase {
+  display: grid;
+  gap: 1.25rem;
+}
+main > .phase {
+  margin: 2rem var(--gutter) 0;
+  padding: 1.25rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 0.35rem solid var(--maize);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+main > .phase:last-of-type { margin-bottom: 2.5rem; }
+.phase > h2 { margin-bottom: 0; }
+
+.phase > img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+/* ---------- Focus & objectives: numbered badge grid ---------- */
+.focus-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+  counter-reset: focus;
+}
+.focus-list li {
+  counter-increment: focus;
+  position: relative;
+  min-height: 4rem;
+  padding: 0.85rem 0.85rem 0.85rem 3.75rem;
+  background: var(--blue-soft);
+  border-radius: 0.5rem;
+}
+.focus-list li::before {
+  content: counter(focus);
+  position: absolute;
+  left: 0.85rem;
+  top: 0.85rem;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--maize);
+  font-weight: 800;
+}
+.focus-list strong { color: var(--blue); }
+
+/* ---------- Resource lists: icon column + text column ---------- */
+.resource-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.resource-list li {
+  position: relative;
+  min-height: 4.25rem;
+  padding: 0.85rem 0.85rem 0.85rem 4rem;
+  border: 1px solid var(--line);
+  border-left: 0.3rem solid var(--maize);
+  border-radius: 0.5rem;
+  background: var(--paper);
+  font-size: 0.98rem;
+}
+
+.resource-type {
+  position: absolute;
+  left: 0.85rem;
+  top: 0.85rem;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  border-radius: 0.5rem;
+  background: var(--blue-soft);
+  font-size: 1.25rem;
+}
+.resource-list a { font-weight: 700; }
+
+/* ---------- Phase 3 table: keeps table semantics, scrolls sideways ---------- */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+}
+table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+caption {
+  text-align: left;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+th, td {
+  padding: 0.7rem;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid var(--line);
+}
+thead th { background: var(--blue); color: var(--paper); }
+tbody tr:nth-child(even) { background: var(--blue-soft); }
+tbody td:nth-child(2) { font-weight: 700; color: var(--blue); }
+
+/* ---------- Home: benefits ---------- */
+.benefit-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.benefit-list li {
+  padding: 0.85rem 0.85rem 0.85rem 1rem;
+  background: var(--paper);
+  border-left: 0.3rem solid var(--blue);
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+}
+.benefit-list strong { display: block; color: var(--blue); }
+
+/* ---------- Home: stage cards (featured first card spans both columns) ---------- */
+.stage-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  counter-reset: stage;
+}
+.stage-card {
+  counter-increment: stage;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 0.4rem;
+  padding: 1rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 0.35rem solid var(--maize);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.stage-card:first-child { grid-column: 1 / -1; }
+.stage-card::before {
+  content: "Stage " counter(stage);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.stage-card h3 { margin: 0; }
+.stage-card p { font-size: 0.95rem; margin: 0; }
+.stage-card p:last-child a {
+  display: block;
+  margin-top: 0.4rem;
+  padding: 0.6rem 0.5rem;
+  min-height: 2.75rem;
+  background: var(--blue);
+  color: var(--paper);
+  font-weight: 700;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+/* ---------- Home: program cards ---------- */
+section[aria-labelledby="featured-programs"] > img {
+  margin-top: 1rem;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+.program-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.75rem;
+}
+.program-card {
+  padding: 0.9rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 0.3rem solid var(--maize);
+  border-radius: 0.5rem;
+}
+.program-card h3 { font-size: 1rem; margin-bottom: 0.3rem; }
+.program-card a { display: inline-block; padding-block: 0.15rem; }
+.program-card p { font-size: 0.9rem; color: var(--muted); }
+
+/* ---------- Home: newsletter callout ---------- */
+main > aside.newsletter {
+  margin: 2rem var(--gutter) 2.5rem;
+  padding: 1.5rem;
+  background: var(--maize);
+  color: var(--blue);
+  border-radius: var(--radius);
+}
+.newsletter h2 { border-bottom-color: var(--blue); }
+.newsletter a {
+  display: block;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: var(--blue);
+  color: var(--paper);
+  text-align: center;
+  font-weight: 700;
+  border-radius: 0.5rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem var(--gutter);
+  background: var(--blue-deep);
+  color: var(--paper);
+  border-top: 0.35rem solid var(--maize);
+  font-size: 0.95rem;
+}
+.site-footer p:first-child { font-weight: 700; }
+.site-footer address { font-style: normal; }
+.site-footer a {
+  color: var(--maize);
+  display: inline-block;
+  padding-block: 0.3rem;
+}
+.site-footer a:hover { color: var(--paper); }
+.site-footer p:last-child {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.85rem;
+}
+
+/* ---------- Accessibility: honor reduced-motion preference ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Let grid children shrink so the table scrolls inside its wrapper */
+.phase > *, .hero > * { min-width: 0; }
