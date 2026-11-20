@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>During the Experience | UMSI Engaged Learning Office Student Resource Portal</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -24,11 +26,13 @@
 
   <main id="main" tabindex="-1">
     <section class="hero" aria-labelledby="page-title">
-      <hgroup>
-        <p>During the Experience</p>
-        <h1 id="page-title">Navigating Your Active Project</h1>
-      </hgroup>
-      <p>Master the art of adaptive project management, human-centered fieldwork, and constructive feedback as you execute your project in real time.</p>
+      <div class="hero-text">
+        <hgroup>
+          <p>During the Experience</p>
+          <h1 id="page-title">Navigating Your Active Project</h1>
+        </hgroup>
+        <p>Master the art of adaptive project management, human-centered fieldwork, and constructive feedback as you execute your project in real time.</p>
+      </div>
       <!-- Image credit: "Students writing notes", Wikimedia Commons, CC0 -->
       <img src="images/students-writing-notes.jpg" alt="Students lean over a shared desk, writing notes in their notebooks.">
     </section>
@@ -39,7 +43,7 @@
       <p>The true value of this phase lies in developing resilience, adaptability, and ethical agility. Learning to manage “scope creep,” navigate mid-project feedback, and re-align technical decisions with human needs are the exact experiences that distinguish top UMSI graduates. When you view friction not as a barrier, but as a natural part of the applied learning process, you develop the strategic problem-solving skills needed in modern information careers.</p>
     </section>
 
-    <section class="phase" id="phase-3" aria-labelledby="phase-3-title">
+    <section class="phase phase--media" id="phase-3" aria-labelledby="phase-3-title">
       <h2 id="phase-3-title">Phase 3: Managing &amp; Executing in the Field</h2>
       <p>Conducting research, tracking progress, and maintaining clear communication with project sponsors.</p>
       <!-- Image credit: "Student writing in field notebook", Wikimedia Commons, Public Domain -->
@@ -47,7 +51,7 @@
 
       <section>
         <h3 id="phase-3-focus">Focus &amp; Objectives</h3>
-        <ul class="focus-list">
+        <ul class="focus-list" data-tracker="during-experience" aria-labelledby="phase-3-focus">
           <li><strong>Fieldwork &amp; Research Methods:</strong> Apply human-centered design tools to observe contexts and extract insights.</li>
           <li><strong>Sponsor &amp; Client Updates:</strong> Maintain transparency with regular progress reporting.</li>
           <li><strong>Feedback Loops:</strong> Gather, evaluate, and integrate constructive feedback mid-project.</li>
@@ -117,7 +121,7 @@
   <footer class="site-footer">
     <p>University of Michigan School of Information | <a href="https://www.si.umich.edu/programs/engaged-learning/about-engaged-learning-office">About the UMSI Engaged Learning Office</a></p>
     <address>Questions? Email the Engaged Learning Office at <a href="mailto:umsi.engagement@umich.edu">umsi.engagement@umich.edu</a></address>
-    <p>&copy; 2026 Regents of the University of Michigan</p>
+    <p>&copy; <span class="current-year">2026</span> Regents of the University of Michigan</p>
   </footer>
 </body>
 </html>

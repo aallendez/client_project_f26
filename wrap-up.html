@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wrap-Up, Impact &amp; Next Steps | UMSI Engaged Learning Office Student Resource Portal</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -24,11 +26,13 @@
 
   <main id="main" tabindex="-1">
     <section class="hero" aria-labelledby="page-title">
-      <hgroup>
-        <p>Wrap-Up, Impact &amp; Next Steps</p>
-        <h1 id="page-title">Completing, Reflecting, and Translating Your Impact</h1>
-      </hgroup>
-      <p>Close your project responsibly, evaluate your outcomes, and articulate your real-world experience for your future career.</p>
+      <div class="hero-text">
+        <hgroup>
+          <p>Wrap-Up, Impact &amp; Next Steps</p>
+          <h1 id="page-title">Completing, Reflecting, and Translating Your Impact</h1>
+        </hgroup>
+        <p>Close your project responsibly, evaluate your outcomes, and articulate your real-world experience for your future career.</p>
+      </div>
       <!-- Image credit: "Student poster presentation", Wikimedia Commons, CC BY-SA 4.0 -->
       <img src="images/poster-presentation.jpg" alt="A student presents a digital research poster featuring a color-coded map of U.S. regions.">
     </section>
@@ -51,7 +55,7 @@
 
       <section>
         <h3 id="track-a-focus">Focus &amp; Objectives</h3>
-        <ul class="focus-list">
+        <ul class="focus-list" data-tracker="wrap-up" aria-labelledby="track-a-focus">
           <li><strong>Completing &amp; Transitioning Work:</strong> Package code, design files, reports, and technical assets into accessible, usable formats for your partner.</li>
           <li><strong>Closing Relationships Appropriately:</strong> Formally conclude the project with gratitude, clarity, and clear future boundaries.</li>
           <li><strong>Evaluating Impact:</strong> Measure project outcomes against initial scoping goals and gather client feedback.</li>
@@ -83,7 +87,7 @@
   <footer class="site-footer">
     <p>University of Michigan School of Information | <a href="https://www.si.umich.edu/programs/engaged-learning/about-engaged-learning-office">About the UMSI Engaged Learning Office</a></p>
     <address>Questions? Email the Engaged Learning Office at <a href="mailto:umsi.engagement@umich.edu">umsi.engagement@umich.edu</a></address>
-    <p>&copy; 2026 Regents of the University of Michigan</p>
+    <p>&copy; <span class="current-year">2026</span> Regents of the University of Michigan</p>
   </footer>
 </body>
 </html>

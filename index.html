@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | UMSI Engaged Learning Office Student Resource Portal</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -24,9 +26,11 @@
 
   <main id="main" tabindex="-1">
     <section class="hero" aria-labelledby="page-title">
-      <h1 id="page-title">Welcome to the UMSI Engaged Learning Office</h1>
-      <p>Build Skills. Work with Partners. Have an Impact.</p>
-      <p>The UMSI Engaged Learning Office connects students with opportunities to apply classroom knowledge to real challenges. Use this site to prepare for your experience, manage your work, and reflect on what you learned.</p>
+      <div class="hero-text">
+        <h1 id="page-title">Welcome to the UMSI Engaged Learning Office</h1>
+        <p>Build Skills. Work with Partners. Have an Impact.</p>
+        <p>The UMSI Engaged Learning Office connects students with opportunities to apply classroom knowledge to real challenges. Use this site to prepare for your experience, manage your work, and reflect on what you learned.</p>
+      </div>
       <!-- Image: UMSI campus photo provided with the class starter code -->
       <img src="images/UMSI_CampusFall_UMSIBackpack_02.jpg" alt="A student with a UMSI backpack walks along a tree-lined campus path in the fall.">
     </section>
@@ -47,19 +51,19 @@
       <p>Engaged learning projects can change as new needs, constraints, and insights emerge. Find guidance for the stage of work you are navigating <strong>now</strong>.</p>
 
       <div class="stage-grid">
-      <article class="stage-card" aria-labelledby="stage-start">
+      <article class="stage-card" aria-labelledby="stage-start" data-tracker-page="preparing-starting" data-tracker-total="6">
         <h3 id="stage-start">Start Here</h3>
         <p>Set learning goals, understand the project context, examine your assumptions, define team roles, and establish a strong relationship with your partner.</p>
         <p><a href="preparing-starting.html">Explore resources for preparing and starting your project</a></p>
       </article>
 
-      <article class="stage-card" aria-labelledby="stage-during">
+      <article class="stage-card" aria-labelledby="stage-during" data-tracker-page="during-experience" data-tracker-total="3">
         <h3 id="stage-during">Navigate the Experience</h3>
         <p>Manage projects and teams, conduct ethical research, communicate progress, respond to feedback, and work through unexpected challenges.</p>
         <p><a href="during-experience.html">Find resources for your active project</a></p>
       </article>
 
-      <article class="stage-card" aria-labelledby="stage-wrap-up">
+      <article class="stage-card" aria-labelledby="stage-wrap-up" data-tracker-page="wrap-up" data-tracker-total="3">
         <h3 id="stage-wrap-up">Wrap Up and Move Forward</h3>
         <p>Complete a responsible handoff, evaluate your impact, reflect on your growth, and translate your work into resume, portfolio, and interview content.</p>
         <p><a href="wrap-up.html">Plan your project wrap-up and next steps</a></p>
@@ -67,7 +71,7 @@
       </div>
     </section>
 
-    <section aria-labelledby="featured-programs">
+    <section class="featured-programs" aria-labelledby="featured-programs">
       <h2 id="featured-programs">Featured Programs</h2>
       <p>Explore opportunities to collaborate with organizations, communities, student teams, and partners in Michigan and beyond.</p>
       <!-- Image credit: "Smiling Student Working on Assignments at Desk", Wikimedia Commons, CC BY 4.0 -->
@@ -128,7 +132,7 @@
   <footer class="site-footer">
     <p>University of Michigan School of Information | <a href="https://www.si.umich.edu/programs/engaged-learning/about-engaged-learning-office">About the UMSI Engaged Learning Office</a></p>
     <address>Questions? Email the Engaged Learning Office at <a href="mailto:umsi.engagement@umich.edu">umsi.engagement@umich.edu</a></address>
-    <p>&copy; 2026 Regents of the University of Michigan</p>
+    <p>&copy; <span class="current-year">2026</span> Regents of the University of Michigan</p>
   </footer>
 </body>
 </html>

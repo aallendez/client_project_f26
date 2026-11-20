@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Preparing &amp; Starting Your Project | UMSI Engaged Learning Office Student Resource Portal</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -24,15 +26,17 @@
 
   <main id="main" tabindex="-1">
     <section class="hero" aria-labelledby="page-title">
-      <hgroup>
-        <p>Preparing &amp; Starting Your Project</p>
-        <h1 id="page-title">Launch Your Engaged Learning Journey</h1>
-      </hgroup>
-      <p>Transform your academic foundation into real-world impact. The UMSI Engaged Learning Office (ELO) guides you through the crucial early stages of project work—from self-reflection and community context to team charters and initial client kickoff.</p>
-      <ul class="jump-links">
-        <li><a href="#phase-1">Phase 1: Preparing</a></li>
-        <li><a href="#phase-2">Phase 2: Starting</a></li>
-      </ul>
+      <div class="hero-text">
+        <hgroup>
+          <p>Preparing &amp; Starting Your Project</p>
+          <h1 id="page-title">Launch Your Engaged Learning Journey</h1>
+        </hgroup>
+        <p>Transform your academic foundation into real-world impact. The UMSI Engaged Learning Office (ELO) guides you through the crucial early stages of project work—from self-reflection and community context to team charters and initial client kickoff.</p>
+        <ul class="jump-links">
+          <li><a href="#phase-1">Phase 1: Preparing</a></li>
+          <li><a href="#phase-2">Phase 2: Starting</a></li>
+        </ul>
+      </div>
       <!-- Image credit: "2023 RWC Project Planning Meeting in Fez", Wikimedia Commons, CC BY-SA 4.0 -->
       <img src="images/project-planning-meeting.jpg" alt="A smiling project team gathers around a table with laptops for a planning meeting.">
     </section>
@@ -43,7 +47,7 @@
       <p>The initial phase of a project is rarely about jumping straight into execution—it is about building the foundation for ethical, sustainable engagement. Taking time to reflect on your own positionality, audit your team’s collective skills, and listen deeply to your partner’s goals prevents project failure down the line. When you ground your project in mutual respect, clear boundaries, and honest communication from Day 1, you transform a simple class deliverable into a reciprocal partnership that creates authentic value for everyone involved.</p>
     </section>
 
-    <section class="phase" id="phase-1" aria-labelledby="phase-1-title">
+    <section class="phase phase--media" id="phase-1" aria-labelledby="phase-1-title">
       <h2 id="phase-1-title">Phase 1: Preparing for the Experience</h2>
       <p>Setting the foundation, understanding community context, and evaluating team readiness before work begins.</p>
       <!-- Image credit: "Scenes from the 2025 Rubin Community Workshop", Wikimedia Commons, CC BY 4.0 -->
@@ -56,7 +60,7 @@
 
       <section>
         <h3 id="phase-1-focus">Focus &amp; Objectives</h3>
-        <ul class="focus-list">
+        <ul class="focus-list" data-tracker="preparing-starting" aria-labelledby="phase-1-focus">
           <li><strong>Social &amp; Community Awareness:</strong> Examine personal identity, privilege, and community dynamics using civic engagement frameworks.</li>
           <li><strong>Expectation &amp; Role Alignment:</strong> Understand program requirements, project commitments, and leadership responsibilities.</li>
           <li><strong>Initial Scoping:</strong> Assess organizational needs and evaluate initial project viability.</li>
@@ -77,7 +81,7 @@
       </section>
     </section>
 
-    <section class="phase" id="phase-2" aria-labelledby="phase-2-title">
+    <section class="phase phase--media" id="phase-2" aria-labelledby="phase-2-title">
       <h2 id="phase-2-title">Phase 2: Starting the Experience</h2>
       <p>Establishing professional communication, conducting initial meetings, and finalizing partnership agreements.</p>
       <!-- Image credit: "Business agreement handshake at coffee shop", Wikimedia Commons, CC0 -->
@@ -90,7 +94,7 @@
 
       <section>
         <h3 id="phase-2-focus">Focus &amp; Objectives</h3>
-        <ul class="focus-list">
+        <ul class="focus-list" data-tracker="preparing-starting" aria-labelledby="phase-2-focus">
           <li><strong>Partner Communication:</strong> Draft clear, professional outreach to launch working relationships.</li>
           <li><strong>First Meetings:</strong> Structure productive kickoff meetings that define roles and project bounds.</li>
           <li><strong>Formalizing Agreements:</strong> Document team commitments and scope agreements shared by all stakeholders.</li>
@@ -119,7 +123,7 @@
   <footer class="site-footer">
     <p>University of Michigan School of Information | <a href="https://www.si.umich.edu/programs/engaged-learning/about-engaged-learning-office">About the UMSI Engaged Learning Office</a></p>
     <address>Questions? Email the Engaged Learning Office at <a href="mailto:umsi.engagement@umich.edu">umsi.engagement@umich.edu</a></address>
-    <p>&copy; 2026 Regents of the University of Michigan</p>
+    <p>&copy; <span class="current-year">2026</span> Regents of the University of Michigan</p>
   </footer>
 </body>
 </html>
